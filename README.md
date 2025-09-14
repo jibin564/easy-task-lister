@@ -1,59 +1,119 @@
-# Project1
+# EasyTask – Angular Task Manager
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
+EasyTask is a modern Angular application for managing users and their tasks.  
+It demonstrates component-based architecture, service-driven data management, and a clean, responsive UI.
 
-## Development server
+---
 
-To start a local development server, run:
+## ✨ Features
 
-```bash
-ng serve
+- **User List:** Browse and select users with avatars.
+- **Task Management:** View, add, and manage tasks for each user.
+- **Component-Based:** Modular Angular components for scalability and maintainability.
+- **Responsive Design:** Clean layout with a header and main content area.
+- **Dummy Data:** Preloaded users and tasks for demonstration.
+
+---
+
+## 🏗️ Project Structure
+
+```
+src/
+├── app/
+│   ├── header/           # App header component
+│   ├── user/             # User list item component
+│   ├── tasks/            # Task list, new task, and task item components
+│   │   ├── new-task/     # Add new task component
+│   │   └── task/         # Single task display component & model
+│   ├── shared/
+│   │   └── card/         # Reusable card UI component
+│   ├── dummy-users.ts    # Dummy user data
+│   ├── app.component.*   # Main app component
+│   └── tasks.service.ts  # Task management service
+│
+├── assets/
+│   ├── task-management-logo.png
+│   └── users/            # User avatar images
+│
+├── styles.css            # Global styles
+└── index.html            # App entry point
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🚀 Getting Started
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/your-username/easytask.git
+   cd easytask
+   ```
 
-```bash
-ng generate component component-name
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```sh
+   ng serve
+   ```
+   Visit [http://localhost:4200](http://localhost:4200) in your browser.
+
+---
+
+## 🧩 Usage
+
+- **Select a user** from the left panel to view their tasks.
+- **Add new tasks** using the provided form.
+- **View and manage tasks** for each user.
+- If no user is selected, a prompt appears:  
+  _“Select a user to see their tasks!”_
+
+---
+
+## 🛠️ Technologies Used
+
+- [Angular](https://angular.io/)
+- TypeScript
+- HTML & CSS
+
+---
+
+## 📂 Assets
+
+- **Logo:** `assets/task-management-logo.png`
+- **User Avatars:** `assets/users/user-1.jpg`, ..., `user-6.jpg`
+
+---
+
+## 📦 Build & Deployment
+
+To build for production:
+```sh
+ng build --configuration production
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+To deploy to GitHub Pages (recommended):
+1. Install `gh-pages`:
+   ```sh
+   npm install --save-dev gh-pages
+   ```
+2. Add this to your `package.json` scripts (replace `easytask` with your project name if different):
+   ```json
+   "deploy": "ng build --base-href /easytask/ && npx gh-pages -d dist/easytask"
+   ```
+3. Deploy:
+   ```sh
+   npm run deploy
+   ```
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 📄 License
 
-To build the project run:
+[MIT](LICENSE)
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**EasyTask** – Manage your tasks, the easy way!
